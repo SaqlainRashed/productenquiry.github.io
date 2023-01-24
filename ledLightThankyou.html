@@ -9,15 +9,25 @@
           </div>
           <div class="tlinks">
             <div class="backtext">
-            <h1>Thank you!</h1>
-            <p>Your submission has been received.</p>
-	        <p>You may close this Tab></p>
+	    
+            <h1>Thank you for your enquiry!</h1>
+		<p>Your Brochure will be downloaded in <span id = "timer"></span>s.</p>
             </div>
           </div>
         </body>
     </html>
+
 <script type="text/javascript">
-	var count = 1;
+	var count = 3;
 	var redirect = "https://drive.google.com/uc?export=download&id=1cb0Vx1A8qW1SbskanKU4tJxlidp8ABjD";
-	window.location.href = redirect;
+	function countDown() {
+		if(count >= 0){
+			document.getElementById("timer").innerHTML = count--;
+			setTimeout("countDown()", 1000);
+		}else{
+			window.location.href = redirect;
+		}
+	}
+        countDown();
+	//window.location.href = redirect;
 </script>
